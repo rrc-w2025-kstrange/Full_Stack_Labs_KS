@@ -108,3 +108,11 @@ function showData() {
     main.appendChild(box);
   });
 }
+
+
+function showYear() {
+  const footer = document.getElementById("footer");
+  const year = new Date().getFullYear();
+
+  footer.textContent = "Pixell River Financial " + year;
+}
