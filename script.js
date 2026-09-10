@@ -80,3 +80,31 @@ document.addEventListener("DOMContentLoaded", function () {
   showYear();
 });
 
+
+function showData() {
+  const main = document.getElementById("main-content");
+
+  data.forEach(function (group) {
+
+    const box = document.createElement("section");
+    box.id = group.id;
+
+    const title = document.createElement("h2");
+    title.textContent = group.name;
+
+    const list = document.createElement("ul");
+
+    group.people.forEach(function (person) {
+      const item = document.createElement("li");
+
+      item.textContent = person.first + " " + person.last;
+      item.setAttribute("data-id", person.id);
+
+      list.appendChild(item);
+    });
+
+    box.appendChild(title);
+    box.appendChild(list);
+    main.appendChild(box);
+  });
+}
