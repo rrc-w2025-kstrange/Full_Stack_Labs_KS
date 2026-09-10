@@ -74,3 +74,9 @@ const data = [
   }
 ];
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  showData();
+  showYear();
+});
+
