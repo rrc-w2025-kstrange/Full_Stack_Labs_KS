@@ -1,0 +1,103 @@
+[
+  {
+    "id": "d1",
+    "name": "Administration",
+    "people": [
+      { "id": "e1", "first": "Zoë", "last": "Robins" },
+      { "id": "e2", "first": "Madeleine", "last": "Madden" }
+    ]
+  },
+  {
+    "id": "d2",
+    "name": "Audit",
+    "people": [
+      { "id": "e3", "first": "Josha", "last": "Sadowski" },
+      { "id": "e4", "first": "Kate", "last": "Fleetwood" }
+    ]
+  },
+  {
+    "id": "d3",
+    "name": "Banking Operations",
+    "people": [
+      { "id": "e5", "first": "Priyanka", "last": "Bose" },
+      { "id": "e6", "first": "Hammed", "last": "Animashaun" },
+      { "id": "e7", "first": "Álvaro", "last": "Morte" },
+      { "id": "e8", "first": "Taylor", "last": "Napier" },
+      { "id": "e9", "first": "Alan", "last": "Simmonds" }
+    ]
+  },
+  {
+    "id": "d4",
+    "name": "Communications",
+    "people": [
+      { "id": "e10", "first": "Gil", "last": "Cardinal" },
+      { "id": "e11", "first": "Richard J.", "last": "Lewis" }
+    ]
+  },
+  {
+    "id": "d5",
+    "name": "Corporate Services",
+    "people": [
+      { "id": "e12", "first": "Randy", "last": "Bradshaw" },
+      { "id": "e13", "first": "Tracey", "last": "Cook" },
+      { "id": "e14", "first": "Lubomir", "last": "Mykytiuk" }
+    ]
+  },
+  {
+    "id": "d6",
+    "name": "Facilities",
+    "people": [
+      { "id": "e15", "first": "Dakota", "last": "House" },
+      { "id": "e16", "first": "Lori Lea", "last": "Okemah" },
+      { "id": "e17", "first": "Renae", "last": "Morrisseau" },
+      { "id": "e18", "first": "Rick", "last": "Belcourt" }
+    ]
+  },
+  {
+    "id": "d7",
+    "name": "Financial Services",
+    "people": [
+      { "id": "e19", "first": "Selina", "last": "Hanusa" },
+      { "id": "e20", "first": "Buffy", "last": "Gaudry" },
+      { "id": "e21", "first": "Shaneen Ann", "last": "Fox" },
+      { "id": "e22", "first": "Allan", "last": "Little" },
+      { "id": "e23", "first": "Danny", "last": "Rabbit" }
+    ]
+  },
+  {
+    "id": "d8",
+    "name": "Human Resources",
+    "people": [
+      { "id": "e24", "first": "Jesse Ed", "last": "Azure" },
+      { "id": "e25", "first": "Stacy", "last": "Da Silva" },
+      { "id": "e26", "first": "Vladimír", "last": "Valenta" },
+      { "id": "e27", "first": "Samone", "last": "Sayeses-Whitney" },
+      { "id": "e28", "first": "Paul", "last": "Coeur" }
+    ]
+  },
+  {
+    "id": "d9",
+    "name": "Information Technology",
+    "people": [
+      { "id": "e29", "first": "Graham", "last": "Greene" },
+      { "id": "e30", "first": "Sandika", "last": "Evergreen" },
+      { "id": "e31", "first": "Jennifer", "last": "Rodriguez (Software Developer)" }
+    ]
+  },
+  {
+    "id": "d10",
+    "name": "IT Technician",
+    "people": [
+      { "id": "e32", "first": "Aiyana", "last": "Littlebear" },
+      { "id": "e33", "first": "Inara", "last": "Thunderbird" },
+      { "id": "e34", "first": "Kaya", "last": "Runningbrook" },
+      { "id": "e35", "first": "Elara", "last": "Firehawk" },
+      { "id": "e36", "first": "Siona", "last": "Moonflower" },
+      { "id": "e37", "first": "Kaiyu", "last": "Greywolf" },
+      { "id": "e38", "first": "Ayawamat", "last": "Nightwind" },
+      { "id": "e39", "first": "Tala", "last": "Braveheart" },
+      { "id": "e40", "first": "Iniko", "last": "Stonebear" },
+      { "id": "e41", "first": "Onatah", "last": "Redhawk" }
+    ]
+  }
+]
