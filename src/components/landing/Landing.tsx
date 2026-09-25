@@ -1,24 +1,16 @@
+import { useState } from "react";
 import type { JSX } from "react";
 import departmentsData from "../../departments.json";
-
-interface Employee {
-  id: string;
-  first: string;
-  last: string;
-}
-
-interface Department {
-  id: string;
-  name: string;
-  people: Employee[];
-}
-
-const data: Department[] = departmentsData;
+import type { Department, Employee } from "./Employee";
+import { EmployeeForm } from "./EmployeeForm";
 
 export function Landing() {
+  const [departments, setDepartments] = useState<Department[]>(departmentsData);
+
   return (
     <main id="main-content">
-      <DepartmentList departments={data} />
+      <DepartmentList departments={departments} />
+      <EmployeeForm departments={departments} setDepartments={setDepartments} />
     </main>
   );
 }
