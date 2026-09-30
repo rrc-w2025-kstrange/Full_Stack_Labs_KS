@@ -1,6 +1,6 @@
-import "./Nav.css";
+import "./Header.css";
 
-function Nav() {
+function Header() {
   return (
     <header>
       <img src="https://itsm-ace.ca/images/logo.svg" alt="Pixell River Logo" width={120} />
@@ -12,4 +12,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default Header;
