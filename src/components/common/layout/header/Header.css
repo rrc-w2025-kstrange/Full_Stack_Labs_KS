@@ -1,8 +1,8 @@
-nav {
+header {
   display: flex;
   justify-content: space-around;
 }
 
-nav span {
+header span {
   margin: 0.5em;
 }
