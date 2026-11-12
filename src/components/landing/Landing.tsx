@@ -1,16 +1,15 @@
-import { useState } from "react";
 import type { JSX } from "react";
-import departmentsData from "../../departments.json";
 import type { Department, Employee } from "./Employee";
 import { EmployeeForm } from "./EmployeeForm";
+import { useDepartments } from "../../hooks/useDepartments";
 
 export function Landing() {
-  const [departments, setDepartments] = useState<Department[]>(departmentsData);
+  const { departments, createEmployee } = useDepartments();
 
   return (
     <main id="main-content">
       <DepartmentList departments={departments} />
-      <EmployeeForm departments={departments} setDepartments={setDepartments} />
+      <EmployeeForm departments={departments} onAdd={createEmployee} />
     </main>
   );
 }

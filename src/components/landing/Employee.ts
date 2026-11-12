@@ -9,3 +9,9 @@ export interface Department {
   name: string;
   people: Employee[];
 }
+
+export interface CreateEmployeeResult {
+  isValid: boolean;
+  firstNameErrors: string[];
+  departmentErrors: string[];
+}

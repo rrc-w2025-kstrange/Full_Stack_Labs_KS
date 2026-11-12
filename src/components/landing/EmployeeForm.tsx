@@ -1,73 +1,74 @@
-import { useState } from "react";
-import type { Department, Employee } from "./Employee";
+import { useFormInput } from "../../hooks/useFormInput";
+import type { CreateEmployeeResult, Department } from "./Employee";
 
+/**
+ * The form needs to know the departments for its drop-down, and it needs a
+ * method for adding an employee. Both come from the parent, because the
+ * parent's page also shows the list of employees.
+ */
 export function EmployeeForm({
   departments,
-  setDepartments,
+  onAdd,
 }: {
   departments: Department[];
-  setDepartments: React.Dispatch<React.SetStateAction<Department[]>>;
+  onAdd: (
+    firstName: string,
+    lastName: string,
+    departmentId: string
+  ) => Promise<CreateEmployeeResult>;
 }) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [departmentId, setDepartmentId] = useState("");
-  const [error, setError] = useState("");
+  const firstName = useFormInput();
+  const lastName = useFormInput();
+  const department = useFormInput();
+
+  const handleEmployeeSubmit = async () => {
+    const result = await onAdd(
+      firstName.value,
+      lastName.value,
+      department.value
+    );
+
+    firstName.validate(() => result.firstNameErrors);
+    department.validate(() => result.departmentErrors);
+  };
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-
-        setError("");
-
-        if (firstName.trim().length < 3) {
-          setError("First name must be at least 3 characters.");
-          return;
-        }
-
-        const selectedDepartment = departments.find((d) => d.id === departmentId);
-        if (!selectedDepartment) {
-          setError("Please select a department.");
-          return;
-        }
-
-        const newEmployee: Employee = {
-          id: `e${Date.now()}`,
-          first: firstName.trim(),
-          last: lastName.trim(),
-        };
-
-        setDepartments((prevDepartments) =>
-          prevDepartments.map((department) =>
-            department.id === departmentId
-              ? { ...department, people: [...department.people, newEmployee] }
-              : department
-          )
-        );
+        handleEmployeeSubmit();
       }}
     >
       <h2>Add Employee</h2>
-      {error && <p>{error}</p>}
       <input
         type="text"
         placeholder="First name"
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
+        value={firstName.value}
+        onChange={(e) => firstName.setValue(e.target.value)}
       />
+      {firstName.messages.map((message, index) => (
+        <p key={index}>{message}</p>
+      ))}
       <input
         type="text"
         placeholder="Last name"
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
+        value={lastName.value}
+        onChange={(e) => lastName.setValue(e.target.value)}
       />
-      <select value={departmentId} onChange={(e) => setDepartmentId(e.target.value)}>
+      <select
+        value={department.value}
+        onChange={(e) => department.setValue(e.target.value)}
+      >
         <option value=""> Choose a department </option>
-        {departments.map((department) => (
-          <option key={department.id} value={department.id}>
-            {department.name}
+        {departments.map((d) => (
+          <option key={d.id} value={d.id}>
+            {d.name}
           </option>
         ))}
       </select>
+      {department.messages.map((message, index) => (
+        <p key={index}>{message}</p>
+      ))}
       <button type="submit">Add Employee</button>
     </form>
   );
